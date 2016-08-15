@@ -1,0 +1,40 @@
+<template name="TaskSingle">
+
+
+
+		
+
+
+		<article class="recipe {{#if task.valid}}in-menu{{/if}}">
+	
+	<h3>{{task.name}}</h3>
+	<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> {{formatage task.createdAt}}</small></p>
+		
+		<p><span class="ingerdient"><h4>Description: </h4>{{task.desc}}</span></p>
+		<p>
+			{{#each task.member}}
+			 <span class="ingerdient"><h4>Done by:</h4> <ul>{{name}}-----{{job}}</ul></span>
+			{{/each}}
+		</p>
+		<p><span class="ingerdient"><h4>Deadline: </h4>{{formatDate task.deadline}}</span></p>
+		<span class="ingredient"><h4>State:</h4></span>
+        {{#if task.valid}}
+          
+                <ul>VALID</ul>
+                      
+		{{else}}
+
+                <ul>IN PROGRESS...</ul>
+                
+
+        {{/if}} 
+
+
+      
+	</article>
+		
+		
+	
+	
+	
+</template>

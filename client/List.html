@@ -1,0 +1,10 @@
+<template name="List">
+	<h1 class="page-title">Tasks List</h1>
+		{{#each tasks}}
+		
+		   {{> ListItem}}
+		 {{else}}
+		  <h3>Please add <a href="/tasks"> tasks</a></h3>
+		{{/each}}
+</template>
+	

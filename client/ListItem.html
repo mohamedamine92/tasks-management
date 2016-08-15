@@ -1,0 +1,36 @@
+<template name="ListItem">
+	<article class="recipe {{#if valid}}in-menu{{/if}}">
+	
+	<h3>{{name}}</h3>
+	<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> {{formatage createdAt}}</small></p>
+		<a href="/task/{{_id}}"> View Details</a>
+		
+        {{#if valid}}
+          
+                <ul>VALID</ul>
+                        <i class="fa fa-check" aria-hidden="true"></i> 
+                      {{#if isOwner}}
+                           <button class="btn-deny toggle-menu"> unvalid task</button>
+		              {{/if}}
+		{{else}}
+
+                <ul>IN PROGRESS...</ul>
+                {{#if warn}}
+                       <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                {{/if}}
+                           <i class="fa fa-spinner fa-spin"></i>
+                  {{#if isOwner}}
+                      
+		                    <button class="btn-primary toggle-menu"> Valid Task</button>
+		           {{else}}
+		                    
+		                
+		          {{/if}}
+
+        {{/if}} 
+
+
+      
+	</article>
+	
+</template>

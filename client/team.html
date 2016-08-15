@@ -1,0 +1,31 @@
+<template name="Team">
+	<h1 class="page-title">My Team</h1>
+
+  <button class="btn">add member</button>
+  <hr>
+   {{#if newMember}}
+    
+  <div class="new-recipe-container">
+        <i class="fa fa-times" aria-hidden="true"></i>
+
+    {{> quickForm collection="Team" id="insertTeamForm" type="insert" class="new-recipe-form"}}
+    
+  </div>
+
+ {{/if}}
+{{#each teamMembers}}
+  
+       <article class="recipe">
+
+  	
+    
+           
+         <h3>{{name}}</h3>  <span class="amount">{{job}}{{> starsRating mutable=true class="js-rate" id=_id rating=rating}}</span>
+
+          
+  	<i class="fa fa-trash"></i>
+  	
+  </article>
+  	
+{{/each}}
+</template>

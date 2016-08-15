@@ -1,0 +1,27 @@
+<template name="Task">
+	<article class="recipe {{#if inTasks}}in-menu{{/if}}">
+		<h3>{{name}}</h3>
+		
+		{{#if editMode }}
+		{{> quickForm collection="Tasks" id="updateTaskId" type="update" doc=this autosave=true}}
+		{{else}}
+		<p>{{desc}}</p>
+		<p>
+			{{#each member}}
+			 <span class="ingerdient">Done by: <ul>{{name}}-{{job}}</ul></span>
+			{{/each}}
+		</p>
+		
+        {{#if inTasks}}
+
+		<button class="btn-deny toggle-menu"> Remove From Tasks</button>
+		{{else}}
+		   <button class="btn-primary toggle-menu"> Add To Tasks</button>
+        {{/if}}
+        {{/if}}
+         <i class="fa fa-pencil"></i>
+	     <i class="fa fa-trash"></i>
+         
+		
+	</article>
+</template>
